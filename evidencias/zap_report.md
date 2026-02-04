@@ -48,7 +48,7 @@ ZAP by [Checkmarx](https://checkmarx.com/).
 | X-Content-Type-Options Header Missing | Low | Systemic |
 | Authentication Request Identified | Informational | 1 |
 | Non-Storable Content | Informational | 3 |
-| Session Management Response Identified | Informational | 2 |
+| Session Management Response Identified | Informational | 1 |
 | Storable and Cacheable Content | Informational | 5 |
 | Storable but Non-Cacheable Content | Informational | 2 |
 
@@ -303,6 +303,13 @@ Under Apache this is done via the "ServerSignature" and "ServerTokens" directive
 
 Cross-Origin-Resource-Policy header is an opt-in header designed to counter side-channels attacks like Spectre. Resource should be specifically set as shareable amongst different origins.
 
+* URL: http://host.docker.internal:8080
+  * Node Name: `http://host.docker.internal:8080`
+  * Method: `GET`
+  * Parameter: `Cross-Origin-Resource-Policy`
+  * Attack: ``
+  * Evidence: ``
+  * Other Info: ``
 * URL: http://host.docker.internal:8080/dvwa/css/login.css
   * Node Name: `http://host.docker.internal:8080/dvwa/css/login.css`
   * Method: `GET`
@@ -319,13 +326,6 @@ Cross-Origin-Resource-Policy header is an opt-in header designed to counter side
   * Other Info: ``
 * URL: http://host.docker.internal:8080/dvwa/images/login_logo.png
   * Node Name: `http://host.docker.internal:8080/dvwa/images/login_logo.png`
-  * Method: `GET`
-  * Parameter: `Cross-Origin-Resource-Policy`
-  * Attack: ``
-  * Evidence: ``
-  * Other Info: ``
-* URL: http://host.docker.internal:8080/login.php
-  * Node Name: `http://host.docker.internal:8080/login.php`
   * Method: `GET`
   * Parameter: `Cross-Origin-Resource-Policy`
   * Attack: ``
@@ -456,15 +456,22 @@ Ensure that your web server, application server, load balancer, etc. is configur
 
 The web/application server is leaking version information via the "Server" HTTP response header. Access to such information may facilitate attackers identifying other vulnerabilities your web/application server is subject to.
 
-* URL: http://host.docker.internal:8080/dvwa/css/login.css
-  * Node Name: `http://host.docker.internal:8080/dvwa/css/login.css`
+* URL: http://host.docker.internal:8080
+  * Node Name: `http://host.docker.internal:8080`
   * Method: `GET`
   * Parameter: ``
   * Attack: ``
   * Evidence: `Apache/2.4.25 (Debian)`
   * Other Info: ``
-* URL: http://host.docker.internal:8080/dvwa/images/RandomStorm.png
-  * Node Name: `http://host.docker.internal:8080/dvwa/images/RandomStorm.png`
+* URL: http://host.docker.internal:8080/
+  * Node Name: `http://host.docker.internal:8080/`
+  * Method: `GET`
+  * Parameter: ``
+  * Attack: ``
+  * Evidence: `Apache/2.4.25 (Debian)`
+  * Other Info: ``
+* URL: http://host.docker.internal:8080/dvwa/css/login.css
+  * Node Name: `http://host.docker.internal:8080/dvwa/css/login.css`
   * Method: `GET`
   * Parameter: ``
   * Attack: ``
@@ -477,16 +484,9 @@ The web/application server is leaking version information via the "Server" HTTP 
   * Attack: ``
   * Evidence: `Apache/2.4.25 (Debian)`
   * Other Info: ``
-* URL: http://host.docker.internal:8080/robots.txt
-  * Node Name: `http://host.docker.internal:8080/robots.txt`
+* URL: http://host.docker.internal:8080/sitemap.xml
+  * Node Name: `http://host.docker.internal:8080/sitemap.xml`
   * Method: `GET`
-  * Parameter: ``
-  * Attack: ``
-  * Evidence: `Apache/2.4.25 (Debian)`
-  * Other Info: ``
-* URL: http://host.docker.internal:8080/login.php
-  * Node Name: `http://host.docker.internal:8080/login.php ()(Login,password,user_token,username)`
-  * Method: `POST`
   * Parameter: ``
   * Attack: ``
   * Evidence: `Apache/2.4.25 (Debian)`
@@ -524,6 +524,14 @@ Ensure that your web server, application server, load balancer, etc. is configur
 
 The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.
 
+* URL: http://host.docker.internal:8080
+  * Node Name: `http://host.docker.internal:8080`
+  * Method: `GET`
+  * Parameter: `x-content-type-options`
+  * Attack: ``
+  * Evidence: ``
+  * Other Info: `This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.
+At "High" threshold this scan rule will not alert on client or server error responses.`
 * URL: http://host.docker.internal:8080/dvwa/css/login.css
   * Node Name: `http://host.docker.internal:8080/dvwa/css/login.css`
   * Method: `GET`
@@ -542,14 +550,6 @@ At "High" threshold this scan rule will not alert on client or server error resp
 At "High" threshold this scan rule will not alert on client or server error responses.`
 * URL: http://host.docker.internal:8080/dvwa/images/login_logo.png
   * Node Name: `http://host.docker.internal:8080/dvwa/images/login_logo.png`
-  * Method: `GET`
-  * Parameter: `x-content-type-options`
-  * Attack: ``
-  * Evidence: ``
-  * Other Info: `This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.
-At "High" threshold this scan rule will not alert on client or server error responses.`
-* URL: http://host.docker.internal:8080/login.php
-  * Node Name: `http://host.docker.internal:8080/login.php`
   * Method: `GET`
   * Parameter: `x-content-type-options`
   * Attack: ``
@@ -694,7 +694,7 @@ It must have a status code that is defined as cacheable by default (200, 203, 20
 
 
 
-##### Informational (High)
+##### Informational (Medium)
 
 ### Description
 
@@ -707,16 +707,9 @@ The given response has been identified as containing a session management token.
   * Attack: ``
   * Evidence: `PHPSESSID`
   * Other Info: `cookie:PHPSESSID`
-* URL: http://host.docker.internal:8080
-  * Node Name: `http://host.docker.internal:8080`
-  * Method: `GET`
-  * Parameter: `PHPSESSID`
-  * Attack: ``
-  * Evidence: `PHPSESSID`
-  * Other Info: `cookie:PHPSESSID`
 
 
-Instances: 2
+Instances: 1
 
 ### Solution
 

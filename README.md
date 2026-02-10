@@ -6,6 +6,12 @@ Este repositório contém:
 - **Exploração (prova de impacto)** de **SQL Injection** com **sqlmap** (confirmação/exploração da falha);
 - **Exploração (prova de impacto)** de **XSS** (Reflected ou Stored) diretamente no DVWA.
 
+## Documentação Detalhada
+Para instruções passo a passo, versões de ferramentas e explicações detalhadas dos comandos, consulte os arquivos específicos:
+- **Instalação e Configuração**: [configuration_steps.md](./configuration_steps.md)
+- **Scans com Nikto e ZAP**: [nikto_zap_steps.md](./nikto_zap_steps.md)
+- **SQL Injection com sqlmap**: [sql_injection_steps.md](./sql_injection_steps.md)
+
 > ⚠️ Execute **apenas em ambiente controlado** e com consentimento (DVWA é propositalmente vulnerável).
 
 ---
@@ -66,6 +72,8 @@ isso dá permissão de execução para os arquivos `.sh` no Git Bash.
 
 ## 5) Implantar o DVWA (subir o alvo vulnerável)
 
+> **Nota:** Para um guia completo de instalação e configuração, veja [configuration_steps.md](./configuration_steps.md).
+
 ### 5.1 Subir o ambiente (Docker Compose)
 Na **pasta raiz** do projeto:
 
@@ -94,6 +102,8 @@ O DVWA ficará disponível em:
 ---
 
 ## 6) Experimentos automatizados (ZAP e Nikto)
+
+> **Nota:** Detalhes dos comandos e análise dos resultados estão em [nikto_zap_steps.md](./nikto_zap_steps.md).
 
 
 ### 6.1 OWASP ZAP Baseline (gera relatórios)
@@ -127,6 +137,8 @@ Arquivo gerado em `evidencias/`:
 ---
 
 ## 7) Exploração 1 — SQL Injection (SQLi) com sqlmap
+
+> **Nota:** O passo a passo detalhado da exploração com sqlmap está em [sql_injection_steps.md](./sql_injection_steps.md).
 
 ### 7.1 Obter cookie de sessão (PHPSESSID) no Brave/Chromium
 No Brave:

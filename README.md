@@ -13,6 +13,7 @@ Para instruções passo a passo, versões de ferramentas e explicações detalha
 - **SQL Injection com sqlmap**: [sql_injection_steps.md](./sql_injection_steps.md)
 - **XSS**: [](./)
 - **Command Injection**: [command_injection_steps.md](./sql_injection_steps.md)
+- **Slides de Resumo do Trabalho**: https://docs.google.com/presentation/d/1j090U7X1ZJyrD9MvSZSMCB3zV8My5ETrxjJWCaTVg_U/edit?usp=sharing
 > ⚠️ Execute **apenas em ambiente controlado** e com consentimento (DVWA é propositalmente vulnerável).
 
 ---

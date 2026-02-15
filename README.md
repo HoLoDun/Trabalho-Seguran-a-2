@@ -11,7 +11,8 @@ Para instruções passo a passo, versões de ferramentas e explicações detalha
 - **Instalação e Configuração**: [configuration_steps.md](./configuration_steps.md)
 - **Scans com Nikto e ZAP**: [nikto_zap_steps.md](./nikto_zap_steps.md)
 - **SQL Injection com sqlmap**: [sql_injection_steps.md](./sql_injection_steps.md)
-
+- **XSS**: [](./)
+- **Command Injection**: [command_injection_steps.md](./sql_injection_steps.md)
 > ⚠️ Execute **apenas em ambiente controlado** e com consentimento (DVWA é propositalmente vulnerável).
 
 ---

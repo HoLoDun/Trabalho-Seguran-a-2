@@ -14,7 +14,7 @@ Para instruções passo a passo, versões de ferramentas e explicações detalha
 - **XSS**: [](./)
 - **Command Injection**: [command_injection_steps.md](./sql_injection_steps.md)
 - **Slides de Resumo do Trabalho**: https://docs.google.com/presentation/d/1j090U7X1ZJyrD9MvSZSMCB3zV8My5ETrxjJWCaTVg_U/edit?usp=sharing
-- **Videos para Edição**: https://drive.google.com/drive/folders/1tG_8PuJvb_Fz49-scoX9YpmYIvdFXsns?usp=sharing
+- **Videos para Edição**: https://www.canva.com/design/DAHBsPbYaNQ/q4kJGLhNxtCVHKxC2CWOYw/edit?utm_content=DAHBsPbYaNQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 > ⚠️ Execute **apenas em ambiente controlado** e com consentimento (DVWA é propositalmente vulnerável).
 
 ---

@@ -178,41 +178,9 @@ Resultados/artefatos em:
 - `evidencias/sqlmap/history/` (histórico do sqlmap, quando aplicável)
 
 
-## 8) Exploração 2 — XSS (Cross-Site Scripting)
+## 8) Entendendo os arquivos de output (o que cada um significa)
 
-Escolha **uma** (Reflected é mais rápida; Stored é mais “forte” por ser persistente).
-
-### 8.1 XSS Reflected (rápido)
-1) DVWA → **Vulnerabilities → XSS (Reflected)**
-2) Envie o payload:
-```html
-<script>alert('XSS')</script>
-```
-3) Submit
-
-Esperado: aparece um **alert**.
-
-o valor digitado é “refletido” na resposta sem escape, então o navegador interpreta a tag `<script>` e executa o JavaScript.
-
-
-### 8.2 XSS Stored (persistente)
-1) DVWA → **Vulnerabilities → XSS (Stored)**
-2) Preencha:
-- Name: `teste`
-- Message:
-```html
-<script>alert('Stored XSS')</script>
-```
-3) Submit e recarregue a página
-
-Esperado: o alert dispara ao exibir o conteúdo (persistente).
-
-o payload é salvo (armazenado) e executa sempre que a página exibe aquela entrada.
-
-
-## 9) Entendendo os arquivos de output (o que cada um significa)
-
-### 9.1 Outputs do ZAP
+### 8.1 Outputs do ZAP
 - `evidencias/zap_report.html`  
   Relatório **para leitura humana** (visual). Bom para tirar screenshot e citar achados.
 - `evidencias/zap_report.json`  
@@ -222,11 +190,11 @@ o payload é salvo (armazenado) e executa sempre que a página exibe aquela entr
 - `evidencias/zap.yaml` (quando gerado)  
   Arquivo da automação/configuração usada pelo framework de automação do ZAP.
 
-### 9.2 Output do Nikto
+### 8.2 Output do Nikto
 - `evidencias/nikto.txt`  
   Saída do Nikto em texto: fingerprints, headers, paths/testes, e alertas encontrados.
 
-### 9.3 Outputs do sqlmap
+### 8.3 Outputs do sqlmap
 - `evidencias/sqlmap_run.txt`  
   Cópia da saída do terminal (o que você viu durante a execução). Ótimo para anexar como evidência.
 - `evidencias/sqlmap/output/host.docker.internal/log`  
@@ -238,13 +206,13 @@ o payload é salvo (armazenado) e executa sempre que a página exibe aquela entr
 - `evidencias/sqlmap/history/`  
   Arquivos de histórico da execução (varia por versão/config).
 
-### 9.4 Screenshots (evidência visual)
+### 8.4 Screenshots (evidência visual)
 - `evidencias/screenshots/`  
-  Pasta sugerida para colocar prints do DVWA (Security=Low, reset DB) e das explorações (SQLi/XSS).
+  Pasta sugerida para colocar prints do DVWA (Security=Low, reset DB) e das explorações.
 
 ---
 
-## 10) Onde ficam as evidências (exemplo final)
+## 9) Onde ficam as evidências (exemplo final)
 
 ```
 evidencias/
@@ -266,12 +234,11 @@ evidencias/
     dvwa_security_low.png
     dvwa_setup_reset.png
     sqli_sqlmap_injectable.png
-    xss_alert.png
 ```
 
 ---
 
-## 11) Encerrar o ambiente (parar o DVWA)
+## 10) Encerrar o ambiente (parar o DVWA)
 
 Na **pasta raiz**:
 

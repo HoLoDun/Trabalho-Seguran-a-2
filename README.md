@@ -1,17 +1,16 @@
-# TRABALHO2 — DVWA + Experimentos (ZAP, Nikto, sqlmap) + Explorações (SQLi e XSS)
+# TRABALHO2 — DVWA + Experimentos (ZAP, Nikto, sqlmap) + Explorações (SQLi e Command Injection)
 
 Este repositório contém:
 - **Implantação do DVWA (Damn Vulnerable Web App)** via Docker Compose (o alvo vulnerável);
 - **Experimentos automatizados** com **OWASP ZAP** e **Nikto** (levantamento inicial de achados);
 - **Exploração (prova de impacto)** de **SQL Injection** com **sqlmap** (confirmação/exploração da falha);
-- **Exploração (prova de impacto)** de **XSS** (Reflected ou Stored) diretamente no DVWA.
+- **Exploração (prova de impacto)** de **Command Injection** diretamente no DVWA.
 
 ## Documentação Detalhada
 Para instruções passo a passo, versões de ferramentas e explicações detalhadas dos comandos, consulte os arquivos específicos:
 - **Instalação e Configuração**: [configuration_steps.md](./configuration_steps.md)
 - **Scans com Nikto e ZAP**: [nikto_zap_steps.md](./nikto_zap_steps.md)
 - **SQL Injection com sqlmap**: [sql_injection_steps.md](./sql_injection_steps.md)
-- **XSS**: [](./)
 - **Command Injection**: [command_injection_steps.md](./command_injection_steps.md)
 - **Slides de Resumo do Trabalho**: https://docs.google.com/presentation/d/1j090U7X1ZJyrD9MvSZSMCB3zV8My5ETrxjJWCaTVg_U/edit?usp=sharing
 - **Videos para Edição**: https://www.canva.com/design/DAHBsPbYaNQ/q4kJGLhNxtCVHKxC2CWOYw/edit?utm_content=DAHBsPbYaNQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton

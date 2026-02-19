@@ -178,9 +178,12 @@ Resultados/artefatos em:
 - `evidencias/sqlmap/history/` (histórico do sqlmap, quando aplicável)
 
 
-## 8) Entendendo os arquivos de output (o que cada um significa)
+## 8) Exploração 2 - Command Injection
+> **Nota:** O passo a passo detalhado da exploração com sqlmap está em [command_injection_steps.md](./command_injection_steps.md).
 
-### 8.1 Outputs do ZAP
+## 9) Entendendo os arquivos de output (o que cada um significa)
+
+### 9.1 Outputs do ZAP
 - `evidencias/zap_report.html`  
   Relatório **para leitura humana** (visual). Bom para tirar screenshot e citar achados.
 - `evidencias/zap_report.json`  
@@ -190,11 +193,11 @@ Resultados/artefatos em:
 - `evidencias/zap.yaml` (quando gerado)  
   Arquivo da automação/configuração usada pelo framework de automação do ZAP.
 
-### 8.2 Output do Nikto
+### 9.2 Output do Nikto
 - `evidencias/nikto.txt`  
   Saída do Nikto em texto: fingerprints, headers, paths/testes, e alertas encontrados.
 
-### 8.3 Outputs do sqlmap
+### 9.3 Outputs do sqlmap
 - `evidencias/sqlmap_run.txt`  
   Cópia da saída do terminal (o que você viu durante a execução). Ótimo para anexar como evidência.
 - `evidencias/sqlmap/output/host.docker.internal/log`  
@@ -206,13 +209,13 @@ Resultados/artefatos em:
 - `evidencias/sqlmap/history/`  
   Arquivos de histórico da execução (varia por versão/config).
 
-### 8.4 Screenshots (evidência visual)
+### 9.4 Screenshots (evidência visual)
 - `evidencias/screenshots/`  
   Pasta sugerida para colocar prints do DVWA (Security=Low, reset DB) e das explorações.
 
 ---
 
-## 9) Onde ficam as evidências (exemplo final)
+## 10) Onde ficam as evidências (exemplo final)
 
 ```
 evidencias/
@@ -238,7 +241,7 @@ evidencias/
 
 ---
 
-## 10) Encerrar o ambiente (parar o DVWA)
+## 11) Encerrar o ambiente (parar o DVWA)
 
 Na **pasta raiz**:
 

